@@ -29,8 +29,7 @@ func main() {
 						{Key: "p1", Value: 1},
 						{Key: "p2", Value: 1},
 					},
-					Unique: true,
-					Sparse: true,
+					Unique: true, Sparse: true,
 				},
 				{
 					Name: "filter_updatedat",
@@ -68,7 +67,7 @@ func main() {
 		os.Exit(1)
 	}
 
-	err = indexes.ApplyIndexes(db, tmp, ctx)
+	err = indexes.CreateIndexes(db, tmp, ctx)
 	if err != nil {
 		fmt.Println("Indexes().CreateMany() ERROR:", err)
 		os.Exit(1) // exit in case of error

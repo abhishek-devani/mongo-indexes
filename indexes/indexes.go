@@ -56,7 +56,7 @@ func GetIndexes(coll *mongo.Collection) error {
 	return nil
 }
 
-func ApplyIndexes(db *mongo.Database, tmp []models.SimpleIndexes, ctx context.Context) error {
+func CreateIndexes(db *mongo.Database, tmp []models.SimpleIndexes, ctx context.Context) error {
 
 	for _, val := range tmp {
 		coll := db.Collection(val.CollectionName)
